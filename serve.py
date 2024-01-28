@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/', methods=['POST', 'GET'])
 def handle_request():
     if request.method == 'POST':
-        subprocess.Popen(['python', 'stress_cpu.py'])
+        subprocess.Popen(['python3', 'stress_cpu.py'])
         return 'Stressing CPU initiated\n', 200
     elif request.method == 'GET':
         private_ip = socket.gethostbyname(socket.gethostname())
